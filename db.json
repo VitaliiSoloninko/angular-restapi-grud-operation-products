@@ -5,6 +5,18 @@
       "title": "1",
       "price": 4,
       "description": "Blumenkohl-Käse-Stern, Kräuter-Rahmsauce, Reis und Möhrensalat"
+    },
+    {
+      "id": "62c9",
+      "_id": "_2",
+      "title": "iPhone",
+      "price": 4
+    },
+    {
+      "id": "8040",
+      "_id": "3",
+      "title": "MacBook",
+      "price": 4
     }
   ]
 }
