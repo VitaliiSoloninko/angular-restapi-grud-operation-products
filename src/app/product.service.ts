@@ -8,7 +8,8 @@ import { Product } from './product.interface';
 export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
-  baseApiUrl = 'http://localhost:3000/products';
+  // baseApiUrl = 'http://localhost:3000/products';
+  baseApiUrl = 'https://nest-rest-api-mongodb-crud.onrender.com/products';
 
   getAll() {
     return this.httpClient.get<Product[]>(this.baseApiUrl);

@@ -21,6 +21,7 @@ export class UpdateComponent implements OnInit {
     _id: '',
     title: '',
     price: 0,
+    __v: 0,
   };
 
   ngOnInit(): void {

@@ -17,6 +17,7 @@ export class CreateComponent {
     _id: '',
     title: '',
     price: 4,
+    __v: 0,
   };
 
   create() {

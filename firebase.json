@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "angular-restapi-grud-operation-products/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
