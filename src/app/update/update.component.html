@@ -1,1 +1,38 @@
-<p>update works!</p>
+<div class="container">
+  <legend>Edit product</legend>
+  <form>
+    <div class="mb-3">
+      <label for="txtId" class="form-label">ID</label>
+      <input
+        type="text"
+        name="id"
+        [(ngModel)]="formData._id"
+        class="form-control"
+        id="txtId"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="txtTitle" class="form-label">Title</label>
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="formData.title"
+        class="form-control"
+        id="txtTitle"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="txtPrice" class="form-label">Price</label>
+      <input
+        type="text"
+        name="price"
+        [(ngModel)]="formData.price"
+        class="form-control"
+        id="txtPrice"
+      />
+    </div>
+    <button type="button" (click)="update()" class="btn btn-primary">
+      Update product
+    </button>
+  </form>
+</div>

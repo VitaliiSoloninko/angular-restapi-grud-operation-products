@@ -19,4 +19,12 @@ export class ProductsComponent implements OnInit {
       this.products = data;
     });
   }
+
+  removeProduct(id: number) {
+    this.productService.remove(id).subscribe({
+      next: (val) => {
+        this.products = this.products.filter((_) => id != id);
+      },
+    });
+  }
 }
