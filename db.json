@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "_id": "1",
+      "title": "1",
+      "price": 4,
+      "description": "Blumenkohl-Käse-Stern, Kräuter-Rahmsauce, Reis und Möhrensalat"
+    }
+  ]
+}
