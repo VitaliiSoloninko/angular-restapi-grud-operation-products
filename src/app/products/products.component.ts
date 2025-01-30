@@ -1,7 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Product } from '../product.interface';
+import { IProduct } from '../product.interface';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductsComponent implements OnInit {
   constructor(private productService: ProductService) {}
-  products: Product[] = [];
+  products: IProduct[] = [];
 
   ngOnInit(): void {
     this.productService.getAll().subscribe((data) => {

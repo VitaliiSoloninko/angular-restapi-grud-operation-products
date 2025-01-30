@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Product } from '../product.interface';
+import { ICreateProduct } from '../create-product.interface';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -13,11 +13,9 @@ import { ProductService } from '../product.service';
 export class CreateComponent {
   constructor(private productService: ProductService, private router: Router) {}
 
-  formData: Product = {
-    _id: '',
+  formData: ICreateProduct = {
     title: '',
     price: 4,
-    __v: 0,
   };
 
   create() {

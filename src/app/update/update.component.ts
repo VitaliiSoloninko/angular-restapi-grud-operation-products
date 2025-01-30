@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../product.interface';
+import { IProduct } from '../product.interface';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class UpdateComponent implements OnInit {
     private ActivatedRoute: ActivatedRoute
   ) {}
 
-  formData: Product = {
+  formData: IProduct = {
     _id: '',
     title: '',
     price: 0,
