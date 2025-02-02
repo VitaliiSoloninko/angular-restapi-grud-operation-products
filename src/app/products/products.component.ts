@@ -1,6 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IProduct } from '../product.interface';
 import { ProductService } from '../product.service';
 
@@ -20,10 +20,10 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  removeProduct(id: number) {
-    this.productService.remove(id).subscribe({
+  removeProduct(_id: string) {
+    this.productService.remove(_id).subscribe({
       next: (val) => {
-        this.products = this.products.filter((_) => id != id);
+        this.products = this.products.filter(() => _id != _id);
       },
     });
   }

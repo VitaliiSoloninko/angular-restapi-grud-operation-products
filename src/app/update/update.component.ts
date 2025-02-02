@@ -18,28 +18,27 @@ export class UpdateComponent implements OnInit {
   ) {}
 
   formData: IProduct = {
-    _id: '',
     title: '',
     price: 0,
-    __v: 0,
+    _id: '',
   };
 
   ngOnInit(): void {
     this.ActivatedRoute.paramMap.subscribe((param) => {
-      let _id = Number(param.get('_id'));
-      this.getById(_id);
+      let id: string = String(param.get('id'));
+      this.getById('id');
     });
   }
 
-  getById(_id: number) {
-    this.productService.edit(_id).subscribe((val) => {
-      this.formData = val;
+  getById(id: string) {
+    this.productService.edit(id).subscribe((product) => {
+      this.formData = product;
     });
   }
 
   update() {
     this.productService.update(this.formData).subscribe({
-      next: (val) => {
+      next: (product) => {
         this.router.navigate(['/products']);
       },
       error: (er) => {

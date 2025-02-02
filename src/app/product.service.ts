@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ICreateProduct } from './create-product.interface';
 import { IProduct } from './product.interface';
 
@@ -7,7 +8,7 @@ import { IProduct } from './product.interface';
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   // baseApiUrl = 'http://localhost:3000/products';
   // baseApiUrl = 'https://nest-rest-api-mongodb-crud.onrender.com/products';
@@ -15,29 +16,29 @@ export class ProductService {
   baseApiUrl =
     'https://nest-rest-api-mongodb-crud-production-c947.up.railway.app/products';
 
-  getAll() {
-    return this.httpClient.get<IProduct[]>(this.baseApiUrl);
+  getAll(): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(this.baseApiUrl);
   }
 
   create(product: ICreateProduct) {
-    return this.httpClient.post(this.baseApiUrl, product);
+    return this.http.post(this.baseApiUrl, product);
   }
 
-  edit(_id: number) {
-    return this.httpClient.get<IProduct>(
-      `https://nest-rest-api-mongodb-crud-production-c947.up.railway.app/products/${_id}`
+  edit(_id: string) {
+    return this.http.get<IProduct>(
+      `https://nest-rest-api-mongodb-crud-production-c947.up.railway.app/products/${_id}}`
     );
   }
 
   update(val: IProduct) {
-    return this.httpClient.put<IProduct>(
+    return this.http.put<IProduct>(
       `https://nest-rest-api-mongodb-crud-production-c947.up.railway.app/products/${val._id}`,
       val
     );
   }
 
-  remove(_id: number) {
-    return this.httpClient.delete<IProduct>(
+  remove(_id: string) {
+    return this.http.delete<IProduct>(
       `https://nest-rest-api-mongodb-crud-production-c947.up.railway.app/products/${_id}`
     );
   }
